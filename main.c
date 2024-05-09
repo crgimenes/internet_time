@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <time.h>
 
-int main() {
+int main(int argc, char *argv[]) {
     time_t now = time(NULL);
     struct tm *utc = gmtime(&now);
 
@@ -11,6 +11,11 @@ int main() {
 
     float beat = total_seconds_bmt /
                  86.4;  // 1 day = 1000 beats so 1 beat = 86.4 seconds
+
+    if (argc == 2) {
+        printf(argv[1], beat);
+        return 0;
+    }
 
     printf("@%.2f\n", beat);
 
