@@ -31,15 +31,15 @@ int main(int argc, char *argv[]) {
         return 1;
     } 
 
-    // Calculate the beat value (Swatch Internet Time)
-    int total_seconds_bmt =
-        ((utc->tm_hour + t) % 24) * 3600 + utc->tm_min * 60 + utc->tm_sec;
+    // Adjust hour with timezone and normalize to [0, 23]
+    int adjusted_hour = (utc->tm_hour + t + 24) % 24;
 
-    float beat = total_seconds_bmt /
-                 86.4;  // 1 day = 1000 beats so 1 beat = 86.4 seconds
+    // Calculate the beat value (Swatch Internet Time)
+    int total_seconds_bmt = adjusted_hour * 3600 + utc->tm_min * 60 + utc->tm_sec;
+    float beat = total_seconds_bmt / 86.4;  // 1 day = 1000 beats so 1 beat = 86.4 seconds
 
     if (format == NULL) {
-        format = "@%02f\n";
+        format = "@%06.2f\n";
     }
 
     printf(format, beat);
