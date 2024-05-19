@@ -3,6 +3,27 @@
 #include <time.h>
 #include <unistd.h>
 
+
+void help(char *name) {
+    printf("Usage: %s [OPTIONS]\n", name);
+    printf("\n");
+    printf("Options:\n");
+    printf("  -t <timezone>  Timezone offset in hours\n");
+    printf("  -f <format>    Output format (default: @%%06.2f)\n");
+    printf("  -l             Use local time instead of UTC\n");
+    printf("\n");
+    printf("Examples:\n");
+    printf("  %s\n", name);
+    printf("  %s -t 3\n", name);
+    printf("  %s -t -5 -f '%%06.2f'\n", name);
+    printf("  %s -l\n", name);
+    printf("\n");
+    printf("Report bugs to: crg@crg.eti.br\n");
+}
+
+
+
+
 int main(int argc, char *argv[]) {
     time_t now = time(NULL);
     struct tm *utc = gmtime(&now);
@@ -12,7 +33,7 @@ int main(int argc, char *argv[]) {
     char buffer[80];
     int opt;
 
-    while ((opt = getopt(argc, argv, "t:f:")) != -1) {
+    while ((opt = getopt(argc, argv, "t:f:lh")) != -1) {
         switch (opt) {
             case 't':
                 t = atoi(optarg);
@@ -20,8 +41,14 @@ int main(int argc, char *argv[]) {
             case 'f':
                 format = optarg;
                 continue;
+            case 'l':
+                utc = localtime(&now);
+                continue;
+            case 'h':
+                help(argv[0]);
+                return 0;
             default:
-                fprintf(stderr, "Usage: %s [-t timezone] [-f format]\n", argv[0]);
+                help(argv[0]);
                 return 1;
         }
     }
