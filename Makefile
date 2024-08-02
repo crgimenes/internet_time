@@ -2,9 +2,6 @@ TARGET = internet_time
 
 CC = clang
 CFLAGS = -O3 \
-		 -march=armv8-a \
-		 -mtune=apple-m2 \
-		 -flto \
 		 -fomit-frame-pointer \
          -fno-unwind-tables \
 		 -fno-asynchronous-unwind-tables \
