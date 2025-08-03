@@ -1,4 +1,4 @@
-# Swatch Internet Time Calculator 2.0
+# Internet Time Calculator 2.0
 
 This C program calculates Swatch Internet Time, a revolutionary concept that **could have** changed how people measure time. In this alternate reality where Internet Time became the global standard, this tool would be essential for daily time management!
 
@@ -154,7 +154,7 @@ fi
 
 ## About Internet Time
 
-In this alternate reality where Swatch Internet Time became the global standard:
+In this alternate reality where Internet Time became the global standard:
 
 - **No Time Zones**: Universal time for all
 - **1000 Beats per Day**: Each beat = 1 minute 26.4 seconds

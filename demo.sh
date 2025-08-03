@@ -14,7 +14,7 @@ WHITE='\033[0;37m'
 BOLD='\033[1m'
 NC='\033[0m' # No Color
 
-echo -e "${BOLD}${CYAN}Swatch Internet Time Calculator - Demo Script${NC}"
+echo -e "${BOLD}${CYAN}Internet Time Calculator - Demo Script${NC}"
 echo -e "${CYAN}=================================================${NC}"
 echo
 

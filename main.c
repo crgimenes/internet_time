@@ -161,7 +161,7 @@ int main(int argc, char *argv[]) {
             time_ptr = localtime(&now);  // Use local time as-is
         }
 
-        // Calculate the beat value (Swatch Internet Time)
+        // Calculate the beat value (Internet Time)
         int total_seconds_bmt =
             time_ptr->tm_hour * 3600 + time_ptr->tm_min * 60 + time_ptr->tm_sec;
         float beat = total_seconds_bmt /
