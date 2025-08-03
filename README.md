@@ -1,6 +1,6 @@
 # Internet Time Calculator 2.0
 
-This C program calculates Swatch Internet Time, a revolutionary concept that **could have** changed how people measure time. In this alternate reality where Internet Time became the global standard, this tool would be essential for daily time management!
+This C program calculates Swatch Internet Time, a revolutionary concept that **could have** changed how people measure time. \<insert sarcasm flag here> In this alternate reality where Internet Time became the global standard, this tool would be essential for daily time management!
 
 Internet Time divides the day into 1000 'beats', abolishing time zones and providing a universal time for everyone.
 
